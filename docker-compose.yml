@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: postgrespassword
     # 他のlocalで動いているPostgresとポートが被らないように5433にしている
     ports:
-      - "5432:5432"
+      - "5433:5432"
   graphql-engine:
     image: hasura/graphql-engine:v2.42.0
     ports:
@@ -36,7 +36,7 @@ services:
     image: hasura/graphql-data-connector:v2.42.0
     restart: always
     ports:
-      - 8081:8081
+      - 8082:8081
     environment:
       QUARKUS_LOG_LEVEL: ERROR # FATAL, ERROR, WARN, INFO, DEBUG, TRACE
       ## https://quarkus.io/guides/opentelemetry#configuration-reference
